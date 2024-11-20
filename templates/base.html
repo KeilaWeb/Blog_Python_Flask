@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Blog</h1>
+        <nav>
+            {% if 'usuario_id' in session %}
+                <a href="{{ url_for('auth.logout') }}">Sair</a>
+                <a href="{{ url_for('blog.criar_postagem') }}">Criar postagem</a>
+            {% else %}
+                <a href="{{ url_for('auth.login') }}">Logar</a>
+                <a href="{{ url_for('auth.cadastro') }}">Cadastre-se</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Blog. Todos os direitos reservados.</p>
+        <p>
+            <a href="#">Política de Privacidade</a> |
+            <a href="#">Termos de Serviço</a>
+        </p>
+    </footer>
+</body>
+</html>

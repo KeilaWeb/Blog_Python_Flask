@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+    <h2>Postagens</h2>
+    <ul>
+        {% for postagem in postagens %}
+            <li>
+                <a href="{{ url_for('blog.detalhe_postagem', postagem_id=postagem['id']) }}">
+                    {{ postagem['titulo'] }}
+                </a>
+                {% if postagem['usuario_id'] == session.get('usuario_id') %}
+                    <a href="{{ url_for('blog.excluir_postagem', postagem_id=postagem['id']) }}">Excluir</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

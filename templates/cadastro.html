@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+    <form method="POST" class="form-container">
+        <h1>Cadastrar</h1>
+        <input type="text" name="nome_usuario" placeholder="Usuário" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+{% endblock %}
