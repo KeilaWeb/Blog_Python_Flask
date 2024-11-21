@@ -7,6 +7,10 @@ from routes.blog_routes import blog_bp
 app = Flask(__name__)
 app.config.from_object(Config)
 
+@app.route('/')
+def home():
+    return redirect(url_for('blog.index'))
+
 # Registra os blueprints para organizar as rotas
 app.register_blueprint(auth_bp, url_prefix='/auth')
 app.register_blueprint(blog_bp, url_prefix='/blog')
