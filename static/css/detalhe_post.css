@@ -1,0 +1,49 @@
+.post-detalhe {
+    margin-bottom: 2rem;
+}
+
+.post-detalhe h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-detalhe p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.comentarios {
+    margin-top: 2rem;
+}
+
+.comentarios ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comentarios li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.comentarios textarea {
+    width: 100%;
+    min-height: 80px;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn.excluir {
+    background-color: #dc3545;
+}
