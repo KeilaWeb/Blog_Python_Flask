@@ -1,5 +1,16 @@
+.container {
+ justify-items: center;
+}
+
+.post-container {
+    width: 950px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.1);
+}
+
 .post-detalhe {
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
 }
 
 .post-detalhe h1 {
@@ -14,12 +25,29 @@
 }
 
 .comentarios {
-    margin-top: 2rem;
+    margin-top: 4rem;
+}
+
+.comentarios ul li {
+    display: flex; /* Define layout flexível */
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    align-items: center; /* Alinha verticalmente os elementos */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Linha para separar comentários */
+    font-size: 16px;
+}
+
+ul li span {
+    color: #000; /* Texto preto */
+    flex-grow: 1; /* Permite que o texto ocupe o máximo de espaço */
+    margin-right: 10px; /* Espaçamento entre o texto e o botão */
+    word-wrap: break-word; /* Quebra linhas automaticamente */
 }
 
 .comentarios ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
+    padding: 20px 0;
+    margin: 0;
 }
 
 .comentarios li {
@@ -44,6 +72,15 @@
     cursor: pointer;
 }
 
+.btn.editar {
+    padding: 0;
+    margin-right: 10px;
+    color: #007bff;
+    background-color: transparent;
+}
+
 .btn.excluir {
-    background-color: #dc3545;
+    padding: 0;
+    background-color: transparent;
+    color: red;
 }

@@ -16,8 +16,8 @@ CREATE TABLE IF NOT EXISTS postagens (
 CREATE TABLE IF NOT EXISTS comentarios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     conteudo TEXT NOT NULL,
-    postagem_id INTEGER NOT NULL,
     usuario_id INTEGER NOT NULL,
-    FOREIGN KEY (postagem_id) REFERENCES postagens(id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
-);
+    postagem_id INTEGER NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (postagem_id) REFERENCES postagens(id)
+)
