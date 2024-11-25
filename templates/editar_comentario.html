@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Comentário{% endblock %}
+
+{% block content %}
+<div class="editar-comentario-container">
+    <h1>Editar Comentário</h1>
+    <form method="POST">
+        <textarea name="conteudo" required>{{ comentario['conteudo'] }}</textarea>
+        <button type="submit" class="btn">Salvar Alterações</button>
+    </form>
+    <a href="{{ url_for('blog.detalhe_postagem', postagem_id=comentario['postagem_id']) }}" class="btn voltar">
+        Cancelar
+    </a>
+</div>
+{% endblock %}

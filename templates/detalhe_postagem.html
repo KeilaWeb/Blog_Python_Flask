@@ -23,9 +23,12 @@
         {% if comentarios %}
             <ul>
                 {% for comentario in comentarios %}
-                    <li>
-                        {{ comentario['conteudo'] }}
+                    <li class="comentario">
+                        <span>{{ comentario['conteudo'] }}</span>
                         {% if comentario['usuario_id'] == session.get('usuario_id') or session.get('eh_administrador') %}
+                            <a href="{{ url_for('blog.editar_comentario', comentario_id=comentario['id']) }}" class="btn editar">
+                                Editar
+                            </a>
                             <a href="{{ url_for('blog.excluir_comentario', comentario_id=comentario['id']) }}" class="btn excluir">
                                 Excluir
                             </a>
