@@ -3,17 +3,15 @@
 {% block title %}Página Inicial{% endblock %}
 
 {% block content %}
-    <h2>Postagens</h2>
-    <ul>
+    <div class="post-cards">
         {% for postagem in postagens %}
-            <li>
-                <a href="{{ url_for('blog.detalhe_postagem', postagem_id=postagem['id']) }}">
-                    {{ postagem['titulo'] }}
+            <div class="card">
+                <h3>{{ postagem['titulo'] }}</h3>
+                <p>{{ postagem['resumo'] }}</p>
+                <a class="btn" href="{{ url_for('blog.detalhe_postagem', postagem_id=postagem['id']) }}">
+                    Leia mais
                 </a>
-                {% if postagem['usuario_id'] == session.get('usuario_id') %}
-                    <a href="{{ url_for('blog.excluir_postagem', postagem_id=postagem['id']) }}">Excluir</a>
-                {% endif %}
-            </li>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

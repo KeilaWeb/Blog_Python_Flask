@@ -6,7 +6,16 @@ blog_bp = Blueprint('blog', __name__)
 @blog_bp.route('/')
 def index():
     db = get_db()
-    postagens = db.execute('SELECT * FROM postagens').fetchall()
+    postagens = db.execute( '''
+        SELECT id, titulo,
+               CASE
+                   WHEN LENGTH(conteudo) > 180 THEN SUBSTR(conteudo, 1, 180) || '...'
+                   ELSE conteudo
+               END AS resumo,
+               usuario_id
+        FROM postagens
+        '''
+    ).fetchall()
     return render_template('index.html', postagens=postagens)
 
 @blog_bp.route('/criar_postagem', methods=['GET', 'POST'])
