@@ -31,6 +31,7 @@
     color: #555;
     margin: 0 0 16px;
     line-height: 1.4;
+    flex-grow: 1;
 }
 
 .card .btn {
@@ -43,6 +44,7 @@
     text-align: center;
     font-size: 0.75em;
     transition: background-color 0.2s ease-in-out;
+    margin-bottom: 0;
 }
 
 .card .btn:hover {
